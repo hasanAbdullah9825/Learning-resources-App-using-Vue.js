@@ -1,26 +1,54 @@
-<template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+<template >
+<stored-resources :resources="storedResources">
+
+</stored-resources>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
+import StoredResources from  "./components/learning-resources/StoredResources.vue"
 export default {
-  name: 'App',
-  components: {
-    HelloWorld
-  }
+components:{
+    StoredResources
+
+},
+    data(){
+
+return{
+    storedResources:[{
+
+        id:"official guide",
+        title:"official guide",
+        description:"official guide",
+        link:"https://www.google.com/"
+    },
+    
+    {
+
+        id:"Home guide",
+        title:"official guide",
+        description:"official guide",
+        link:"https://www.google.com/"
+    }]
+}
+
+    }
+  
 }
 </script>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+ <style >
+ @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+* {
+  box-sizing: border-box;
 }
-</style>
+
+html {
+  font-family: 'Roboto', sans-serif;
+}
+
+body {
+  margin: 0;
+}
+
+ </style>

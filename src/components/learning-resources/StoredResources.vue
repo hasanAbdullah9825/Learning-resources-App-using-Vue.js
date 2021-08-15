@@ -15,16 +15,16 @@ export default {
     components:{
 LearningResources
     },
-    props:['resources']
+    inject:['resources']
 }
 </script>
 
 <style scoped>
-ul {
+ ul {
   list-style: none;
   margin: 0;
   padding: 0;
   margin: auto;
   max-width: 40rem;
-}
+} 
 </style>

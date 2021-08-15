@@ -32,7 +32,7 @@ export default {
 </script>
 
 <style scoped>
-li {
+ li {
   margin: auto;
   max-width: 40rem;
 }
@@ -60,5 +60,5 @@ a {
 a:hover,
 a:active {
   color: #c89300;
-}
+} 
 </style>

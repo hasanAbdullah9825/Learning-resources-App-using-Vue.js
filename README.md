@@ -9,7 +9,7 @@ Dynamic component\
 keepAlive<br/>
 props<br/>
 porvide and inject\
-custom events\
+custom events
 
 ## Project setup
 ```

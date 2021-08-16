@@ -6,7 +6,9 @@
 		<base-button @click="setSelectedTab('add-resources')"
 			>Add Resource</base-button
 		>
-		<component :is="selectedTab"></component>
+		<keep-alive>
+			<component :is="selectedTab"></component>
+		</keep-alive>
 	</base-card>
 </template>
 

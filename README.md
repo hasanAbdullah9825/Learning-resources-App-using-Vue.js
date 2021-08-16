@@ -6,8 +6,8 @@ Global vs Local component\
 Scoped style\
 slots\
 Dynamic component\
-keepAlive\ 
-props\
+keepAlive<br/>
+props<br/>
 porvide and inject\
 custom events\
 

@@ -2,7 +2,7 @@
 
 Here I have implemented my knowledge of components(basic+advance).
 I have implemented these topics:
-Global vs Local component
+Global vs Local component </br>
 Scoped style
 slots
 Dynamic component

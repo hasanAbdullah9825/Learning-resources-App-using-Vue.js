@@ -1,5 +1,19 @@
 <template>
+  <base-dialog v-if="inputIsInvalid" title="Something error" @close="confirmError">
+  <template #default>
+<p>At least one input missing</p>
+
+  </template>
+
+
+ <template #actions>
+<base-button @click="confirmError">Ok</base-button>
+
+  </template>
+
+  </base-dialog>
 	<base-card>
+	
 		<form @submit.prevent="submitData()">
 			<div class="form-group">
 				<label for="title">Title</label>
@@ -36,12 +50,29 @@
 		components: {
 			BaseCard
 		},
+		data() {
+			return {
+				inputIsInvalid: false
+			};
+		},
 		methods: {
 			submitData() {
 				const enteredTitle = this.$refs.titleInput.value;
 				const enteredDescription = this.$refs.descriptionInput.value;
 				const enteredLink = this.$refs.linkInput.value;
+
+				if (
+					enteredTitle.trim() == "" ||
+					enteredDescription.trim() == "" ||
+					enteredLink == ""
+				) {
+					this.inputIsInvalid = true;
+					return;
+				}
 				this.addResource(enteredTitle, enteredDescription, enteredLink);
+			},
+			confirmError(){
+				this.inputIsInvalid = false;
 			}
 		},
 		inject: ["addResource"]

@@ -11,6 +11,7 @@
 
 import TheHeader from "./components/Layouts/TheHeader.vue"
 import TheResources from "./components/learning-resources/TheResources.vue"
+
 export default {
 components:{
   TheHeader,TheResources

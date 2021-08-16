@@ -1,5 +1,6 @@
 <template>
 <ul>
+    
 <learning-resources v-for="res in resources" :key="res.id" 
 :title="res.title"
 :description="res.description" 
@@ -15,6 +16,7 @@ export default {
     components:{
 LearningResources
     },
+   
     inject:['resources']
 }
 </script>

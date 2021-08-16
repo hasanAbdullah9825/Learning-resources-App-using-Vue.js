@@ -52,12 +52,17 @@
 				};
 				this.storedResources.unshift(newResource);
 				this.selectedTab="stored-resources";
+			},
+			removeResource(removeId){
+				const index= this.storedResources.findIndex(res=>removeId===res.id);
+				this.storedResources.splice(index,1);
 			}
 		},
 		provide() {
 			return {
 				resources: this.storedResources,
-				addResource:this.addResource
+				addResource:this.addResource,
+				removeResource:this.removeResource
 			};
 		}
 	};

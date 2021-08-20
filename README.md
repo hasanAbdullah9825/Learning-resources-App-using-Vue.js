@@ -1,5 +1,16 @@
 # learning-resource
 
+Here I have implemented my knowledge of components(basic+advance).
+I have implemented these topics:\
+Global vs Local component\
+Scoped style\
+slots\
+Dynamic component\
+keepAlive<br/>
+props<br/>
+porvide and inject\
+custom events
+
 ## Project setup
 ```
 npm install

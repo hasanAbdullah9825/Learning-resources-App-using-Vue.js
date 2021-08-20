@@ -1,48 +1,51 @@
 <template>
-  <base-dialog v-if="inputIsInvalid" title="Something error" @close="confirmError">
-  <template #default>
-<p>At least one input missing</p>
+	<teleport to="body">
+		<base-dialog
+			v-if="inputIsInvalid"
+			title="Something error"
+			@close="confirmError"
+		>
+			<template #default>
+				<p>At least one input missing</p>
+			</template>
 
-  </template>
+			<template #actions>
+				<base-button @click="confirmError">Ok</base-button>
+			</template>
+		</base-dialog>
+			</teleport>
+		<base-card>
+			<form @submit.prevent="submitData()">
+				<div class="form-group">
+					<label for="title">Title</label>
+					<input type="text" id="title" name="title" ref="titleInput" />
+				</div>
 
+				<div class="form-group">
+					<label for="description">Description</label>
+					<input
+						type="text"
+						id="description"
+						name="description"
+						ref="descriptionInput"
+					/>
+				</div>
 
- <template #actions>
-<base-button @click="confirmError">Ok</base-button>
+				<div class="form-group">
+					<label for="link">Link</label>
+					<input type="" id="link" name="link" ref="linkInput" />
+				</div>
 
-  </template>
-
-  </base-dialog>
-	<base-card>
+				<div>
+					<base-button type="submit">
+						Add Resource
+					</base-button>
+				</div>
+			</form>
+		</base-card>
 	
-		<form @submit.prevent="submitData()">
-			<div class="form-group">
-				<label for="title">Title</label>
-				<input type="text" id="title" name="title" ref="titleInput" />
-			</div>
-
-			<div class="form-group">
-				<label for="description">Description</label>
-				<input
-					type="text"
-					id="description"
-					name="description"
-					ref="descriptionInput"
-				/>
-			</div>
-
-			<div class="form-group">
-				<label for="link">Link</label>
-				<input type="" id="link" name="link" ref="linkInput" />
-			</div>
-
-			<div>
-				<base-button type="submit">
-					Add Resource
-				</base-button>
-			</div>
-		</form>
-	</base-card>
 </template>
+
 
 <script>
 	import BaseCard from "../UI/BaseCard.vue";
@@ -71,7 +74,7 @@
 				}
 				this.addResource(enteredTitle, enteredDescription, enteredLink);
 			},
-			confirmError(){
+			confirmError() {
 				this.inputIsInvalid = false;
 			}
 		},
